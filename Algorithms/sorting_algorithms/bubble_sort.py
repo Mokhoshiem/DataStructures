@@ -27,20 +27,42 @@ def mod_bubble_sorter(elements):
         return
 
 
-els1 = [100,5,3,4,2,1,15,30,10,55,40,30,20,10,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,1000,99,98,97,96,95,-5]
-print(els1)
-bubble_sorter(els1)
-print(els1)
-random.shuffle(els1)
-print(els1)
-mod_bubble_sorter(els1)
-print(els1)
+def dict_bubble_sorter(elements,key):
+    size = len(elements)
+    swapped = False
+    for i in range(size-1):
+        for j in range(size-1-i):
+            if elements[j][key] > elements[j+1][key]:
+                tmp = elements[j]
+                elements[j] = elements[j+1]
+                elements[j+1] = tmp
+                swapped = True
+    if not swapped:
+        return
 
-els2 = ['Daily','Weekly','Annual','Monthly','No Way']
-print(els2)
-bubble_sorter(els2)
-print(els2)
-random.shuffle(els2)
-print(els2)
-mod_bubble_sorter(els2)
-print(els2)
+# els1 = [100,5,3,4,2,1,15,30,10,55,40,30,20,10,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,1000,99,98,97,96,95,-5]
+# print(els1)
+# bubble_sorter(els1)
+# print(els1)
+# random.shuffle(els1)
+# print(els1)
+# mod_bubble_sorter(els1)
+# print(els1)
+
+# els2 = ['Daily','Weekly','Annual','Monthly','No Way']
+# print(els2)
+# bubble_sorter(els2)
+# print(els2)
+# random.shuffle(els2)
+# print(els2)
+# mod_bubble_sorter(els2)
+# print(els2)
+elems = [{'Name':'Mohamed','Age':33,'Address':'Zohra'},
+         {'Name':'Hagar','Age':32,'Address':'Damanhur'},
+         {'Name':'Adel','Age':65,'Address':'Damanhur'},
+         {'Name':'Flavio','Age':29,'Address':'Lokeen'}]
+
+dict_bubble_sorter(elems,'Name')
+print(elems)
+dict_bubble_sorter(elems,'Age')
+print(elems)
