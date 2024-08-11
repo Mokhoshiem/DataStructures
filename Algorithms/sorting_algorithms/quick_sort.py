@@ -1,7 +1,7 @@
 def partition(arr,start,end):
     pivot = arr[end]
 
-    i = start - 1
+    i = start - 1 # Starting from -1
     for j in range(start,end):
         if arr[j] <= pivot:
             i +=1
