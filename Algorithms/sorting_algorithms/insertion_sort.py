@@ -34,4 +34,6 @@ if __name__ == '__main__':
     for arr in arrs:
         inline_insertion_sort(arr)
     print(arrs)
+    inline_insertion_sort(arrs)
+    print(arrs)
 
