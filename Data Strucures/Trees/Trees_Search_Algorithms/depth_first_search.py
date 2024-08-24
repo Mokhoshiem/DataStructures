@@ -10,6 +10,8 @@ class Node:
 def depth_first_values(root)->list:
     stack = [root]
     path = []
+    if root == None:
+        return []
     while len(stack) > 0:
         current = stack.pop()
         path.append(current)
@@ -21,6 +23,16 @@ def depth_first_values(root)->list:
     
     return path
 
+# Using Recursive
+def depth_first_recursive(root):
+    result = [root]
+    if root == None:
+        return []
+    lefts = depth_first_recursive(root.left)
+    rights = depth_first_recursive(root.right)
+    result.extend(lefts)
+    result.extend(rights)
+    return result
 
 if __name__ == '__main__':
     a = Node('a')
@@ -35,5 +47,5 @@ if __name__ == '__main__':
     b.left = d
     b.right = e
     c.right = f
-
-    print(depth_first_values(a))
+    # print(depth_first_values(a))
+    print(depth_first_recursive(a))
