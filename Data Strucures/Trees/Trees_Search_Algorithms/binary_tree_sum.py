@@ -1,6 +1,6 @@
 from depth_first_search import Node
 
-def sum_binary(root):
+def sum_binary(root=None):
     '''Depth First Algorithm that works recursively
     '''
     if root is None:
@@ -10,7 +10,7 @@ def sum_binary(root):
 
     return root.value + lefts + rights
 
-def sum_binary_BF(root):
+def sum_binary_BF(root=None):
     '''Breadth First Algorithm that works iteratively
     '''
     result = 0
@@ -39,5 +39,5 @@ if __name__ == '__main__':
     b.right = e
     c.right = f
 
-    # print(sum_binary(f))
-    print(sum_binary_BF(a))
+    print(sum_binary(c))
+    print(sum_binary_BF(b))
